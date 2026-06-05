@@ -31,9 +31,11 @@ pub fn swap_endian_u32(num: u32) -> [u8; 4] {
     num.to_le_bytes()
 }
 
+// TODO: Parse input string to u64, return error string if invalid
 pub fn parse_satoshis(input: &str) -> Result<u64, String> {
     // TODO: Parse input string to u64, return error string if invalid
-   input
+
+    input
         .parse::<u64>()
         .map_err(|_| String::from("Invalid satoshi amount"))
 }
